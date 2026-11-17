@@ -5,12 +5,29 @@ proves its numbers are right. The pricer is small on purpose: **the tests are th
 
 ## Setup
 
+### macOS / Linux (bash or zsh)
+
 ```bash
-python -m venv .venv && source .venv/bin/activate
+python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 pytest -v
 python scripts/make_golden.py   # once, then commit tests/golden/bonds.json
 ```
+
+### Windows (PowerShell)
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -e ".[dev]"
+pytest -v
+python scripts/make_golden.py   # once, then commit tests/golden/bonds.json
+```
+
+If PowerShell blocks activation, run
+`Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, or use
+`.venv\Scripts\activate.bat` from cmd. PowerShell 5.1 has no `&&`, so run the
+commands on separate lines.
 
 ## Layout
 

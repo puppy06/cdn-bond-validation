@@ -63,7 +63,10 @@ def settlement_date(trade: date, conv: Conventions | None = None) -> ql.Date:
 
 
 def _dirty(bond, y, s, conv):
-    return ql.BondFunctions.dirtyPrice(bond, y, conv.day_count, conv.compounding, conv.frequency, s)
+    # BondFunctions.dirtyPrice has no yield overload in QuantLib 1.44 (only
+    # discount-curve / z-spread ones), so build dirty = clean(yield) + accrued.
+    clean = ql.BondFunctions.cleanPrice(bond, y, conv.day_count, conv.compounding, conv.frequency, s)
+    return clean + ql.BondFunctions.accruedAmount(bond, s)
 
 
 def analytics_from_yield(bond: ql.Bond, ytm: float, settle: date,
