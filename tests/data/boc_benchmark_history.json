@@ -1,0 +1,1594 @@
+{
+ "source": "https://www.bankofcanada.ca/stats/assets/pdf/bench_CDN.pdf",
+ "source_modified": "2026-10-23",
+ "note": "Maturity day is taken as the 1st when the PDF gives only month and year. An entry holds from its effective date until the next entry for the same tenor. Rolls after source_modified are not captured.",
+ "history": {
+  "10YR": [
+   {
+    "effective": "1991-11-01",
+    "maturity": "2002-04-01",
+    "coupon": 0.085
+   },
+   {
+    "effective": "1992-09-16",
+    "maturity": "2003-06-01",
+    "coupon": 0.0725
+   },
+   {
+    "effective": "1993-08-12",
+    "maturity": "2003-12-01",
+    "coupon": 0.075
+   },
+   {
+    "effective": "1994-01-14",
+    "maturity": "2004-06-01",
+    "coupon": 0.065
+   },
+   {
+    "effective": "1994-09-02",
+    "maturity": "2004-12-01",
+    "coupon": 0.09
+   },
+   {
+    "effective": "1995-05-04",
+    "maturity": "2005-12-01",
+    "coupon": 0.0875
+   },
+   {
+    "effective": "1996-05-15",
+    "maturity": "2006-12-01",
+    "coupon": 0.07
+   },
+   {
+    "effective": "1997-04-30",
+    "maturity": "2007-06-01",
+    "coupon": 0.0725
+   },
+   {
+    "effective": "1998-05-15",
+    "maturity": "2008-06-01",
+    "coupon": 0.06
+   },
+   {
+    "effective": "1999-10-04",
+    "maturity": "2009-06-01",
+    "coupon": 0.055
+   },
+   {
+    "effective": "2000-03-16",
+    "maturity": "2010-06-01",
+    "coupon": 0.055
+   },
+   {
+    "effective": "2001-02-15",
+    "maturity": "2011-06-01",
+    "coupon": 0.06
+   },
+   {
+    "effective": "2002-08-14",
+    "maturity": "2012-06-01",
+    "coupon": 0.0525
+   },
+   {
+    "effective": "2003-08-12",
+    "maturity": "2013-06-01",
+    "coupon": 0.0525
+   },
+   {
+    "effective": "2004-08-18",
+    "maturity": "2014-06-01",
+    "coupon": 0.05
+   },
+   {
+    "effective": "2005-08-16",
+    "maturity": "2015-06-01",
+    "coupon": 0.045
+   },
+   {
+    "effective": "2006-08-09",
+    "maturity": "2016-06-01",
+    "coupon": 0.04
+   },
+   {
+    "effective": "2007-08-07",
+    "maturity": "2017-06-01",
+    "coupon": 0.04
+   },
+   {
+    "effective": "2008-07-14",
+    "maturity": "2018-06-01",
+    "coupon": 0.0425
+   },
+   {
+    "effective": "2009-02-27",
+    "maturity": "2019-06-01",
+    "coupon": 0.0375
+   },
+   {
+    "effective": "2010-04-30",
+    "maturity": "2020-06-01",
+    "coupon": 0.035
+   },
+   {
+    "effective": "2011-05-05",
+    "maturity": "2021-06-01",
+    "coupon": 0.0325
+   },
+   {
+    "effective": "2012-05-04",
+    "maturity": "2022-06-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2013-04-01",
+    "maturity": "2023-06-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2014-02-25",
+    "maturity": "2024-06-01",
+    "coupon": 0.025
+   },
+   {
+    "effective": "2015-01-26",
+    "maturity": "2025-06-01",
+    "coupon": 0.0225
+   },
+   {
+    "effective": "2016-04-21",
+    "maturity": "2026-06-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2017-04-27",
+    "maturity": "2027-06-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2018-04-26",
+    "maturity": "2028-06-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2019-04-18",
+    "maturity": "2029-06-01",
+    "coupon": 0.0225
+   },
+   {
+    "effective": "2020-04-03",
+    "maturity": "2030-06-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2021-01-29",
+    "maturity": "2030-12-01",
+    "coupon": 0.005
+   },
+   {
+    "effective": "2021-09-28",
+    "maturity": "2031-06-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2022-03-01",
+    "maturity": "2031-12-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2022-06-24",
+    "maturity": "2032-06-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2022-12-23",
+    "maturity": "2032-12-01",
+    "coupon": 0.025
+   },
+   {
+    "effective": "2023-05-25",
+    "maturity": "2033-06-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2023-10-20",
+    "maturity": "2033-12-01",
+    "coupon": 0.0325
+   },
+   {
+    "effective": "2024-03-28",
+    "maturity": "2034-06-01",
+    "coupon": 0.03
+   },
+   {
+    "effective": "2024-12-13",
+    "maturity": "2034-12-01",
+    "coupon": 0.0325
+   },
+   {
+    "effective": "2025-06-26",
+    "maturity": "2035-06-01",
+    "coupon": 0.0325
+   },
+   {
+    "effective": "2025-12-19",
+    "maturity": "2035-12-01",
+    "coupon": 0.0325
+   },
+   {
+    "effective": "2026-06-23",
+    "maturity": "2036-06-01",
+    "coupon": 0.0325
+   }
+  ],
+  "2YR": [
+   {
+    "effective": "1991-11-20",
+    "maturity": "1993-12-01",
+    "coupon": 0.07
+   },
+   {
+    "effective": "1992-02-18",
+    "maturity": "1994-03-01",
+    "coupon": 0.075
+   },
+   {
+    "effective": "1992-06-03",
+    "maturity": "1994-09-01",
+    "coupon": 0.07
+   },
+   {
+    "effective": "1992-12-03",
+    "maturity": "1995-03-01",
+    "coupon": 0.07
+   },
+   {
+    "effective": "1993-06-11",
+    "maturity": "1995-09-01",
+    "coupon": 0.0625
+   },
+   {
+    "effective": "1993-12-15",
+    "maturity": "1996-03-01",
+    "coupon": 0.0475
+   },
+   {
+    "effective": "1994-06-01",
+    "maturity": "1996-09-01",
+    "coupon": 0.0775
+   },
+   {
+    "effective": "1994-12-01",
+    "maturity": "1997-03-01",
+    "coupon": 0.08
+   },
+   {
+    "effective": "1995-06-01",
+    "maturity": "1997-09-01",
+    "coupon": 0.07
+   },
+   {
+    "effective": "1996-03-07",
+    "maturity": "1998-03-01",
+    "coupon": 0.06
+   },
+   {
+    "effective": "1996-06-17",
+    "maturity": "1998-09-15",
+    "coupon": 0.0625
+   },
+   {
+    "effective": "1997-01-02",
+    "maturity": "1999-03-01",
+    "coupon": 0.0575
+   },
+   {
+    "effective": "1997-02-28",
+    "maturity": "1999-03-15",
+    "coupon": 0.04
+   },
+   {
+    "effective": "1997-09-11",
+    "maturity": "1999-09-15",
+    "coupon": 0.0475
+   },
+   {
+    "effective": "1998-03-16",
+    "maturity": "2000-03-15",
+    "coupon": 0.05
+   },
+   {
+    "effective": "1998-09-15",
+    "maturity": "2000-12-01",
+    "coupon": 0.05
+   },
+   {
+    "effective": "1999-03-16",
+    "maturity": "2001-06-01",
+    "coupon": 0.045
+   },
+   {
+    "effective": "1999-10-04",
+    "maturity": "2001-12-01",
+    "coupon": 0.0525
+   },
+   {
+    "effective": "2000-03-16",
+    "maturity": "2002-06-01",
+    "coupon": 0.0575
+   },
+   {
+    "effective": "2000-09-20",
+    "maturity": "2002-12-01",
+    "coupon": 0.06
+   },
+   {
+    "effective": "2001-03-19",
+    "maturity": "2003-06-01",
+    "coupon": 0.0575
+   },
+   {
+    "effective": "2001-09-28",
+    "maturity": "2003-12-01",
+    "coupon": 0.05
+   },
+   {
+    "effective": "2002-03-19",
+    "maturity": "2004-06-01",
+    "coupon": 0.035
+   },
+   {
+    "effective": "2002-09-13",
+    "maturity": "2004-12-01",
+    "coupon": 0.0425
+   },
+   {
+    "effective": "2003-04-17",
+    "maturity": "2005-06-01",
+    "coupon": 0.035
+   },
+   {
+    "effective": "2003-09-23",
+    "maturity": "2005-12-01",
+    "coupon": 0.03
+   },
+   {
+    "effective": "2004-03-30",
+    "maturity": "2006-06-01",
+    "coupon": 0.03
+   },
+   {
+    "effective": "2004-09-22",
+    "maturity": "2006-12-01",
+    "coupon": 0.0325
+   },
+   {
+    "effective": "2005-03-23",
+    "maturity": "2007-06-01",
+    "coupon": 0.03
+   },
+   {
+    "effective": "2005-09-19",
+    "maturity": "2007-12-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2006-03-23",
+    "maturity": "2008-06-01",
+    "coupon": 0.0375
+   },
+   {
+    "effective": "2006-09-01",
+    "maturity": "2008-12-01",
+    "coupon": 0.0425
+   },
+   {
+    "effective": "2007-03-23",
+    "maturity": "2009-06-01",
+    "coupon": 0.0375
+   },
+   {
+    "effective": "2007-09-21",
+    "maturity": "2009-12-01",
+    "coupon": 0.0425
+   },
+   {
+    "effective": "2008-04-03",
+    "maturity": "2010-06-01",
+    "coupon": 0.0375
+   },
+   {
+    "effective": "2008-08-21",
+    "maturity": "2010-12-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2009-03-26",
+    "maturity": "2011-06-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2009-07-29",
+    "maturity": "2011-09-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2009-10-09",
+    "maturity": "2011-12-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2010-01-29",
+    "maturity": "2012-03-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2010-05-06",
+    "maturity": "2012-06-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2010-07-09",
+    "maturity": "2012-09-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2010-10-18",
+    "maturity": "2012-12-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2011-01-28",
+    "maturity": "2013-03-01",
+    "coupon": 0.0175
+   },
+   {
+    "effective": "2011-06-17",
+    "maturity": "2013-08-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2011-09-16",
+    "maturity": "2013-11-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2011-12-09",
+    "maturity": "2014-02-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2012-03-02",
+    "maturity": "2014-05-01",
+    "coupon": 0.0075
+   },
+   {
+    "effective": "2012-05-17",
+    "maturity": "2014-08-01",
+    "coupon": 0.0225
+   },
+   {
+    "effective": "2012-09-28",
+    "maturity": "2014-11-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2012-12-21",
+    "maturity": "2015-02-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2013-03-22",
+    "maturity": "2015-05-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2013-06-14",
+    "maturity": "2015-08-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2013-09-20",
+    "maturity": "2015-11-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2013-11-25",
+    "maturity": "2016-02-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2014-05-02",
+    "maturity": "2016-05-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2014-06-20",
+    "maturity": "2016-08-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2014-10-03",
+    "maturity": "2016-11-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2014-11-21",
+    "maturity": "2017-02-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2015-04-24",
+    "maturity": "2017-05-01",
+    "coupon": 0.0025
+   },
+   {
+    "effective": "2015-06-12",
+    "maturity": "2017-08-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2015-09-24",
+    "maturity": "2017-11-01",
+    "coupon": 0.0025
+   },
+   {
+    "effective": "2015-12-10",
+    "maturity": "2018-02-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2016-03-24",
+    "maturity": "2018-05-01",
+    "coupon": 0.0025
+   },
+   {
+    "effective": "2016-07-06",
+    "maturity": "2018-08-01",
+    "coupon": 0.005
+   },
+   {
+    "effective": "2016-10-13",
+    "maturity": "2018-11-01",
+    "coupon": 0.005
+   },
+   {
+    "effective": "2017-01-12",
+    "maturity": "2019-02-01",
+    "coupon": 0.005
+   },
+   {
+    "effective": "2017-04-20",
+    "maturity": "2019-05-01",
+    "coupon": 0.0075
+   },
+   {
+    "effective": "2017-07-20",
+    "maturity": "2019-08-01",
+    "coupon": 0.0075
+   },
+   {
+    "effective": "2017-10-12",
+    "maturity": "2019-11-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2018-01-11",
+    "maturity": "2020-02-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2018-04-20",
+    "maturity": "2020-05-01",
+    "coupon": 0.0175
+   },
+   {
+    "effective": "2018-07-19",
+    "maturity": "2020-08-01",
+    "coupon": 0.0175
+   },
+   {
+    "effective": "2018-10-11",
+    "maturity": "2020-11-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2019-01-15",
+    "maturity": "2021-02-01",
+    "coupon": 0.0225
+   },
+   {
+    "effective": "2019-04-11",
+    "maturity": "2021-05-01",
+    "coupon": 0.0175
+   },
+   {
+    "effective": "2019-07-18",
+    "maturity": "2021-08-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2019-10-17",
+    "maturity": "2021-11-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2020-01-09",
+    "maturity": "2022-02-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2020-03-27",
+    "maturity": "2022-05-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2020-06-12",
+    "maturity": "2022-08-01",
+    "coupon": 0.0025
+   },
+   {
+    "effective": "2020-10-09",
+    "maturity": "2022-11-01",
+    "coupon": 0.0025
+   },
+   {
+    "effective": "2021-02-04",
+    "maturity": "2023-02-01",
+    "coupon": 0.0025
+   },
+   {
+    "effective": "2021-04-16",
+    "maturity": "2023-05-01",
+    "coupon": 0.0025
+   },
+   {
+    "effective": "2021-07-19",
+    "maturity": "2023-08-01",
+    "coupon": 0.0025
+   },
+   {
+    "effective": "2021-10-07",
+    "maturity": "2023-11-01",
+    "coupon": 0.005
+   },
+   {
+    "effective": "2022-02-03",
+    "maturity": "2024-02-01",
+    "coupon": 0.0075
+   },
+   {
+    "effective": "2022-05-10",
+    "maturity": "2024-05-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2022-07-15",
+    "maturity": "2024-08-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2022-10-14",
+    "maturity": "2024-11-01",
+    "coupon": 0.03
+   },
+   {
+    "effective": "2023-01-13",
+    "maturity": "2025-02-01",
+    "coupon": 0.0375
+   },
+   {
+    "effective": "2023-04-14",
+    "maturity": "2025-05-01",
+    "coupon": 0.0375
+   },
+   {
+    "effective": "2023-07-20",
+    "maturity": "2025-08-01",
+    "coupon": 0.035
+   },
+   {
+    "effective": "2023-10-05",
+    "maturity": "2025-11-01",
+    "coupon": 0.045
+   },
+   {
+    "effective": "2024-01-12",
+    "maturity": "2026-02-01",
+    "coupon": 0.045
+   },
+   {
+    "effective": "2024-04-12",
+    "maturity": "2026-05-01",
+    "coupon": 0.04
+   },
+   {
+    "effective": "2025-02-06",
+    "maturity": "2027-02-01",
+    "coupon": 0.03
+   },
+   {
+    "effective": "2025-05-01",
+    "maturity": "2027-05-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2025-07-24",
+    "maturity": "2027-08-01",
+    "coupon": 0.025
+   },
+   {
+    "effective": "2025-10-31",
+    "maturity": "2027-11-01",
+    "coupon": 0.025
+   },
+   {
+    "effective": "2026-01-23",
+    "maturity": "2028-02-01",
+    "coupon": 0.0225
+   },
+   {
+    "effective": "2026-04-17",
+    "maturity": "2028-05-01",
+    "coupon": 0.025
+   },
+   {
+    "effective": "2026-08-06",
+    "maturity": "2028-08-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2026-10-23",
+    "maturity": "2028-11-01",
+    "coupon": 0.03
+   }
+  ],
+  "3YR": [
+   {
+    "effective": "1991-07-07",
+    "maturity": "1994-12-01",
+    "coupon": 0.0925
+   },
+   {
+    "effective": "1992-04-28",
+    "maturity": "1995-11-01",
+    "coupon": 0.0825
+   },
+   {
+    "effective": "1992-07-31",
+    "maturity": "1996-02-01",
+    "coupon": 0.06
+   },
+   {
+    "effective": "1993-04-02",
+    "maturity": "1996-08-01",
+    "coupon": 0.065
+   },
+   {
+    "effective": "1994-03-01",
+    "maturity": "1997-07-01",
+    "coupon": 0.075
+   },
+   {
+    "effective": "1994-12-01",
+    "maturity": "1998-02-01",
+    "coupon": 0.0625
+   },
+   {
+    "effective": "1995-06-01",
+    "maturity": "1998-11-01",
+    "coupon": 0.08
+   },
+   {
+    "effective": "1996-03-22",
+    "maturity": "1999-08-01",
+    "coupon": 0.065
+   },
+   {
+    "effective": "1996-12-16",
+    "maturity": "2000-02-01",
+    "coupon": 0.055
+   },
+   {
+    "effective": "1997-09-25",
+    "maturity": "2000-09-01",
+    "coupon": 0.075
+   },
+   {
+    "effective": "1998-06-05",
+    "maturity": "2001-09-01",
+    "coupon": 0.07
+   },
+   {
+    "effective": "1999-10-04",
+    "maturity": "2002-09-01",
+    "coupon": 0.055
+   },
+   {
+    "effective": "2000-03-16",
+    "maturity": "2003-06-01",
+    "coupon": 0.0725
+   },
+   {
+    "effective": "2000-09-20",
+    "maturity": "2003-09-01",
+    "coupon": 0.0525
+   },
+   {
+    "effective": "2001-03-19",
+    "maturity": "2004-09-01",
+    "coupon": 0.05
+   },
+   {
+    "effective": "2002-08-27",
+    "maturity": "2005-12-01",
+    "coupon": 0.0875
+   },
+   {
+    "effective": "2003-09-23",
+    "maturity": "2006-09-01",
+    "coupon": 0.0575
+   },
+   {
+    "effective": "2004-03-30",
+    "maturity": "2007-09-01",
+    "coupon": 0.045
+   },
+   {
+    "effective": "2005-03-23",
+    "maturity": "2008-06-01",
+    "coupon": 0.06
+   },
+   {
+    "effective": "2005-08-29",
+    "maturity": "2008-09-01",
+    "coupon": 0.0425
+   },
+   {
+    "effective": "2006-03-23",
+    "maturity": "2009-06-01",
+    "coupon": 0.055
+   },
+   {
+    "effective": "2006-08-18",
+    "maturity": "2009-09-01",
+    "coupon": 0.0425
+   },
+   {
+    "effective": "2007-03-23",
+    "maturity": "2010-06-01",
+    "coupon": 0.055
+   },
+   {
+    "effective": "2007-09-21",
+    "maturity": "2010-09-01",
+    "coupon": 0.04
+   },
+   {
+    "effective": "2008-04-03",
+    "maturity": "2011-06-01",
+    "coupon": 0.06
+   },
+   {
+    "effective": "2008-08-21",
+    "maturity": "2011-09-01",
+    "coupon": 0.0375
+   },
+   {
+    "effective": "2009-02-11",
+    "maturity": "2012-06-01",
+    "coupon": 0.0375
+   },
+   {
+    "effective": "2009-08-27",
+    "maturity": "2012-09-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2010-04-13",
+    "maturity": "2013-03-01",
+    "coupon": 0.0175
+   },
+   {
+    "effective": "2010-08-10",
+    "maturity": "2013-09-01",
+    "coupon": 0.025
+   },
+   {
+    "effective": "2011-02-10",
+    "maturity": "2014-03-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2011-06-17",
+    "maturity": "2014-08-01",
+    "coupon": 0.0225
+   },
+   {
+    "effective": "2012-02-17",
+    "maturity": "2015-02-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2012-08-17",
+    "maturity": "2015-08-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2013-03-01",
+    "maturity": "2016-02-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2013-08-30",
+    "maturity": "2016-08-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2014-01-17",
+    "maturity": "2017-02-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2014-10-09",
+    "maturity": "2017-08-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2015-04-07",
+    "maturity": "2018-02-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2015-06-16",
+    "maturity": "2018-09-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2016-04-21",
+    "maturity": "2019-06-01",
+    "coupon": 0.0375
+   },
+   {
+    "effective": "2016-07-19",
+    "maturity": "2019-09-01",
+    "coupon": 0.0175
+   },
+   {
+    "effective": "2017-01-25",
+    "maturity": "2020-03-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2017-08-24",
+    "maturity": "2020-09-01",
+    "coupon": 0.0075
+   },
+   {
+    "effective": "2018-01-25",
+    "maturity": "2021-03-01",
+    "coupon": 0.0075
+   },
+   {
+    "effective": "2018-09-28",
+    "maturity": "2021-09-01",
+    "coupon": 0.0075
+   },
+   {
+    "effective": "2019-01-28",
+    "maturity": "2022-03-01",
+    "coupon": 0.005
+   },
+   {
+    "effective": "2019-06-13",
+    "maturity": "2022-09-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2020-02-07",
+    "maturity": "2023-03-01",
+    "coupon": 0.0175
+   },
+   {
+    "effective": "2020-06-18",
+    "maturity": "2023-09-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2021-03-04",
+    "maturity": "2024-04-01",
+    "coupon": 0.0025
+   },
+   {
+    "effective": "2022-01-20",
+    "maturity": "2024-10-01",
+    "coupon": 0.0075
+   },
+   {
+    "effective": "2022-06-23",
+    "maturity": "2025-04-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2022-11-18",
+    "maturity": "2025-10-01",
+    "coupon": 0.03
+   },
+   {
+    "effective": "2023-05-18",
+    "maturity": "2026-04-01",
+    "coupon": 0.03
+   },
+   {
+    "effective": "2024-01-12",
+    "maturity": "2026-09-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2025-01-16",
+    "maturity": "2027-09-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2026-03-04",
+    "maturity": "2028-09-01",
+    "coupon": 0.0325
+   },
+   {
+    "effective": "2026-04-01",
+    "maturity": "2029-03-01",
+    "coupon": 0.04
+   },
+   {
+    "effective": "2026-10-23",
+    "maturity": "2029-09-01",
+    "coupon": 0.035
+   }
+  ],
+  "5YR": [
+   {
+    "effective": "1991-10-23",
+    "maturity": "1997-03-01",
+    "coupon": 0.0825
+   },
+   {
+    "effective": "1992-05-20",
+    "maturity": "1997-07-01",
+    "coupon": 0.075
+   },
+   {
+    "effective": "1992-08-19",
+    "maturity": "1998-02-01",
+    "coupon": 0.0625
+   },
+   {
+    "effective": "1993-05-27",
+    "maturity": "1998-09-01",
+    "coupon": 0.065
+   },
+   {
+    "effective": "1993-12-01",
+    "maturity": "1999-03-01",
+    "coupon": 0.0575
+   },
+   {
+    "effective": "1994-06-01",
+    "maturity": "1999-09-01",
+    "coupon": 0.0775
+   },
+   {
+    "effective": "1994-11-23",
+    "maturity": "2000-03-01",
+    "coupon": 0.085
+   },
+   {
+    "effective": "1995-06-01",
+    "maturity": "2000-09-01",
+    "coupon": 0.075
+   },
+   {
+    "effective": "1995-12-01",
+    "maturity": "2001-03-01",
+    "coupon": 0.075
+   },
+   {
+    "effective": "1996-07-25",
+    "maturity": "2001-09-01",
+    "coupon": 0.07
+   },
+   {
+    "effective": "1997-08-28",
+    "maturity": "2002-09-01",
+    "coupon": 0.055
+   },
+   {
+    "effective": "1998-08-27",
+    "maturity": "2003-09-01",
+    "coupon": 0.0525
+   },
+   {
+    "effective": "1999-10-04",
+    "maturity": "2004-09-01",
+    "coupon": 0.05
+   },
+   {
+    "effective": "2000-09-06",
+    "maturity": "2005-09-01",
+    "coupon": 0.06
+   },
+   {
+    "effective": "2001-09-14",
+    "maturity": "2006-09-01",
+    "coupon": 0.0575
+   },
+   {
+    "effective": "2002-08-20",
+    "maturity": "2007-09-01",
+    "coupon": 0.045
+   },
+   {
+    "effective": "2003-09-04",
+    "maturity": "2008-09-01",
+    "coupon": 0.0425
+   },
+   {
+    "effective": "2004-08-31",
+    "maturity": "2009-09-01",
+    "coupon": 0.0425
+   },
+   {
+    "effective": "2005-08-29",
+    "maturity": "2010-09-01",
+    "coupon": 0.04
+   },
+   {
+    "effective": "2006-08-18",
+    "maturity": "2011-09-01",
+    "coupon": 0.0375
+   },
+   {
+    "effective": "2007-06-12",
+    "maturity": "2012-06-01",
+    "coupon": 0.0375
+   },
+   {
+    "effective": "2008-05-09",
+    "maturity": "2013-06-01",
+    "coupon": 0.035
+   },
+   {
+    "effective": "2009-02-11",
+    "maturity": "2014-06-01",
+    "coupon": 0.03
+   },
+   {
+    "effective": "2009-08-26",
+    "maturity": "2014-12-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2010-03-05",
+    "maturity": "2015-06-01",
+    "coupon": 0.025
+   },
+   {
+    "effective": "2010-08-19",
+    "maturity": "2015-12-01",
+    "coupon": 0.03
+   },
+   {
+    "effective": "2011-03-03",
+    "maturity": "2016-06-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2011-07-08",
+    "maturity": "2016-09-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2012-02-17",
+    "maturity": "2017-03-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2012-08-17",
+    "maturity": "2017-09-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2013-03-01",
+    "maturity": "2018-03-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2013-08-30",
+    "maturity": "2018-09-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2014-02-21",
+    "maturity": "2019-03-01",
+    "coupon": 0.0175
+   },
+   {
+    "effective": "2014-08-08",
+    "maturity": "2019-09-01",
+    "coupon": 0.0175
+   },
+   {
+    "effective": "2015-02-20",
+    "maturity": "2020-03-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2015-07-24",
+    "maturity": "2020-09-01",
+    "coupon": 0.0075
+   },
+   {
+    "effective": "2016-01-14",
+    "maturity": "2021-03-01",
+    "coupon": 0.0075
+   },
+   {
+    "effective": "2016-08-18",
+    "maturity": "2021-09-01",
+    "coupon": 0.0075
+   },
+   {
+    "effective": "2017-02-16",
+    "maturity": "2022-03-01",
+    "coupon": 0.005
+   },
+   {
+    "effective": "2017-08-24",
+    "maturity": "2022-09-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2018-02-15",
+    "maturity": "2023-03-01",
+    "coupon": 0.0175
+   },
+   {
+    "effective": "2018-08-24",
+    "maturity": "2023-09-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2019-02-14",
+    "maturity": "2024-03-01",
+    "coupon": 0.0225
+   },
+   {
+    "effective": "2019-07-04",
+    "maturity": "2024-09-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2020-01-31",
+    "maturity": "2025-03-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2020-05-29",
+    "maturity": "2025-09-01",
+    "coupon": 0.005
+   },
+   {
+    "effective": "2021-03-10",
+    "maturity": "2026-03-01",
+    "coupon": 0.0025
+   },
+   {
+    "effective": "2021-09-22",
+    "maturity": "2026-09-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2022-03-30",
+    "maturity": "2027-03-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2022-09-27",
+    "maturity": "2027-09-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2023-03-21",
+    "maturity": "2028-03-01",
+    "coupon": 0.035
+   },
+   {
+    "effective": "2023-08-25",
+    "maturity": "2028-09-01",
+    "coupon": 0.0325
+   },
+   {
+    "effective": "2024-02-16",
+    "maturity": "2029-03-01",
+    "coupon": 0.04
+   },
+   {
+    "effective": "2025-03-14",
+    "maturity": "2030-03-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2025-09-04",
+    "maturity": "2030-09-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2026-03-20",
+    "maturity": "2031-03-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2026-09-10",
+    "maturity": "2031-09-01",
+    "coupon": 0.03
+   }
+  ],
+  "7YR": [
+   {
+    "effective": "1991-01-30",
+    "maturity": "1998-10-01",
+    "coupon": 0.095
+   },
+   {
+    "effective": "1992-08-27",
+    "maturity": "1999-12-01",
+    "coupon": 0.0925
+   },
+   {
+    "effective": "1993-05-03",
+    "maturity": "2000-05-01",
+    "coupon": 0.0975
+   },
+   {
+    "effective": "1993-11-01",
+    "maturity": "2001-06-01",
+    "coupon": 0.0975
+   },
+   {
+    "effective": "1994-09-01",
+    "maturity": "2001-12-01",
+    "coupon": 0.0975
+   },
+   {
+    "effective": "1995-03-16",
+    "maturity": "2002-04-01",
+    "coupon": 0.085
+   },
+   {
+    "effective": "1995-12-01",
+    "maturity": "2003-06-01",
+    "coupon": 0.0725
+   },
+   {
+    "effective": "1996-11-05",
+    "maturity": "2003-12-01",
+    "coupon": 0.075
+   },
+   {
+    "effective": "1999-01-13",
+    "maturity": "2005-12-01",
+    "coupon": 0.0875
+   },
+   {
+    "effective": "2001-03-19",
+    "maturity": "2008-06-01",
+    "coupon": 0.06
+   },
+   {
+    "effective": "2002-08-27",
+    "maturity": "2009-06-01",
+    "coupon": 0.055
+   },
+   {
+    "effective": "2003-09-04",
+    "maturity": "2010-06-01",
+    "coupon": 0.055
+   },
+   {
+    "effective": "2004-08-23",
+    "maturity": "2011-06-01",
+    "coupon": 0.06
+   },
+   {
+    "effective": "2005-08-16",
+    "maturity": "2012-06-01",
+    "coupon": 0.0525
+   },
+   {
+    "effective": "2006-08-09",
+    "maturity": "2013-06-01",
+    "coupon": 0.0525
+   },
+   {
+    "effective": "2007-06-12",
+    "maturity": "2014-06-01",
+    "coupon": 0.05
+   },
+   {
+    "effective": "2008-05-09",
+    "maturity": "2015-06-01",
+    "coupon": 0.045
+   },
+   {
+    "effective": "2009-08-27",
+    "maturity": "2016-06-01",
+    "coupon": 0.04
+   },
+   {
+    "effective": "2010-10-21",
+    "maturity": "2017-06-01",
+    "coupon": 0.04
+   },
+   {
+    "effective": "2011-05-05",
+    "maturity": "2018-06-01",
+    "coupon": 0.0425
+   },
+   {
+    "effective": "2012-05-04",
+    "maturity": "2019-06-01",
+    "coupon": 0.0375
+   },
+   {
+    "effective": "2013-03-22",
+    "maturity": "2020-06-01",
+    "coupon": 0.035
+   },
+   {
+    "effective": "2014-02-25",
+    "maturity": "2021-06-01",
+    "coupon": 0.0325
+   },
+   {
+    "effective": "2015-01-26",
+    "maturity": "2022-06-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2016-01-14",
+    "maturity": "2023-06-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2017-05-03",
+    "maturity": "2024-06-01",
+    "coupon": 0.025
+   },
+   {
+    "effective": "2019-01-15",
+    "maturity": "2025-06-01",
+    "coupon": 0.0225
+   },
+   {
+    "effective": "2020-02-07",
+    "maturity": "2026-06-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2020-06-18",
+    "maturity": "2027-06-01",
+    "coupon": 0.01
+   },
+   {
+    "effective": "2021-03-04",
+    "maturity": "2028-06-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2022-06-24",
+    "maturity": "2029-06-01",
+    "coupon": 0.0225
+   },
+   {
+    "effective": "2023-02-15",
+    "maturity": "2030-06-01",
+    "coupon": 0.0125
+   },
+   {
+    "effective": "2024-01-12",
+    "maturity": "2030-12-01",
+    "coupon": 0.005
+   },
+   {
+    "effective": "2024-03-28",
+    "maturity": "2031-06-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2025-01-16",
+    "maturity": "2031-12-01",
+    "coupon": 0.015
+   },
+   {
+    "effective": "2026-03-04",
+    "maturity": "2032-12-01",
+    "coupon": 0.025
+   },
+   {
+    "effective": "2026-09-10",
+    "maturity": "2033-06-01",
+    "coupon": 0.0275
+   }
+  ],
+  "LONG": [
+   {
+    "effective": "1991-11-26",
+    "maturity": "2022-06-01",
+    "coupon": 0.0925
+   },
+   {
+    "effective": "1992-08-06",
+    "maturity": "2023-06-01",
+    "coupon": 0.08
+   },
+   {
+    "effective": "1994-07-22",
+    "maturity": "2025-06-01",
+    "coupon": 0.09
+   },
+   {
+    "effective": "1997-04-30",
+    "maturity": "2027-06-01",
+    "coupon": 0.08
+   },
+   {
+    "effective": "2000-05-01",
+    "maturity": "2029-06-01",
+    "coupon": 0.0575
+   },
+   {
+    "effective": "2004-07-19",
+    "maturity": "2033-06-01",
+    "coupon": 0.0575
+   },
+   {
+    "effective": "2008-01-18",
+    "maturity": "2037-06-01",
+    "coupon": 0.05
+   },
+   {
+    "effective": "2010-11-19",
+    "maturity": "2041-06-01",
+    "coupon": 0.04
+   },
+   {
+    "effective": "2014-02-21",
+    "maturity": "2045-12-01",
+    "coupon": 0.035
+   },
+   {
+    "effective": "2016-11-24",
+    "maturity": "2048-12-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2020-04-23",
+    "maturity": "2051-12-01",
+    "coupon": 0.02
+   },
+   {
+    "effective": "2022-06-30",
+    "maturity": "2053-12-01",
+    "coupon": 0.0175
+   },
+   {
+    "effective": "2024-05-30",
+    "maturity": "2055-12-01",
+    "coupon": 0.0275
+   },
+   {
+    "effective": "2026-03-06",
+    "maturity": "2057-12-01",
+    "coupon": 0.035
+   }
+  ]
+ }
+}

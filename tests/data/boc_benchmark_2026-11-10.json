@@ -1,37 +1,39 @@
 {
  "source": "https://www.bankofcanada.ca/valet/observations/group/bond_yields_benchmark/json",
  "date": "2026-11-10",
+ "settle": "2026-11-12",
  "unit": "percent",
+ "benchmark_history_as_of": "2026-10-23",
  "benchmark_issues": {
   "2YR": {
+   "effective": "2026-10-23",
    "maturity": "2028-11-01",
-   "coupon": 0.03,
-   "effective": "2026-10-23"
+   "coupon": 0.03
   },
   "3YR": {
+   "effective": "2026-10-23",
    "maturity": "2029-09-01",
-   "coupon": 0.035,
-   "effective": "2026-10-23"
+   "coupon": 0.035
   },
   "5YR": {
+   "effective": "2026-09-10",
    "maturity": "2031-09-01",
-   "coupon": 0.03,
-   "effective": "2026-09-10"
+   "coupon": 0.03
   },
   "7YR": {
+   "effective": "2026-09-10",
    "maturity": "2033-06-01",
-   "coupon": 0.0275,
-   "effective": "2026-09-10"
+   "coupon": 0.0275
   },
   "10YR": {
+   "effective": "2026-06-23",
    "maturity": "2036-06-01",
-   "coupon": 0.0325,
-   "effective": "2026-06-23"
+   "coupon": 0.0325
   },
   "LONG": {
+   "effective": "2026-03-06",
    "maturity": "2057-12-01",
-   "coupon": 0.035,
-   "effective": "2026-03-06"
+   "coupon": 0.035
   }
  },
  "yields": {

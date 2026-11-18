@@ -6,6 +6,7 @@ dependencies = ["QuantLib>=1.30"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
+data = ["pypdf>=4"]  # scripts/make_benchmark_history.py
 
 [tool.pytest.ini_options]
 pythonpath = ["src", "tests"]
