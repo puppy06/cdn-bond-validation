@@ -1,5 +1,5 @@
 """Known answers and conventions checked directly against QuantLib. Inputs: BoC benchmark bonds."""
-from datetime import timedelta
+from datetime import date, timedelta
 
 import pytest
 
@@ -24,10 +24,14 @@ def test_zero_coupon_closed_form(bond, ytm):
                                     abs=1e-10)
 
 
+def test_t_plus_one_matches_fixture_settle():
+    assert pricer.settlement_date(TRADE) == pricer.to_ql(SETTLE)
+
+
 def test_t_plus_one_skips_remembrance_day():
-    # The fixture's trade date is Tue 2026-11-10; Nov 11 is a holiday on QuantLib's Canada
-    # settlement calendar, so T+1 is Thu Nov 12.
-    assert pricer.settlement_date(TRADE) == ql.Date(12, 11, 2026)
+    # A calendar fact, independent of the fixture date: Tue 2026-11-10 trades settle Thu Nov 12
+    # because Nov 11 is a holiday on QuantLib's Canada settlement calendar.
+    assert pricer.settlement_date(date(2026, 11, 10)) == ql.Date(12, 11, 2026)
 
 
 def _settle(bond, which):

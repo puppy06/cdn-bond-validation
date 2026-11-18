@@ -119,7 +119,8 @@ def d_zero_coupon():
 # Day, is a Canadian holiday). The only check that sees settlement_days and calendar bugs:
 # T+2 lands on Nov 13, and TARGET lands on Nov 11.
 def d_t_plus_one():
-    return pricer.settlement_date(TRADE) != ql.Date(12, 11, 2026)
+    return (pricer.settlement_date(TRADE) != pricer.to_ql(SETTLE)
+            or pricer.settlement_date(date(2026, 11, 10)) != ql.Date(12, 11, 2026))
 
 
 # Price from a trade date (trade -> T+1 settle -> price) vs the reference at a hand-checked

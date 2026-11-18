@@ -40,7 +40,10 @@ commands on separate lines.
 | `tests/test_settlement.py` | Trade date to T+1 settle to price, with hand-checked settle dates around weekends and holidays |
 | `tests/test_known_answers.py` | Par bond, zero-coupon closed form, T+1 settlement, Canadian day count |
 | `tests/test_curve_and_callable.py` | Curve (bootstrapped from the real Bank of Canada benchmark bonds and yields for 2026-11-10) reprices its inputs; callable ≤ straight; callable value falls as vol rises |
-| `tests/data/boc_benchmark_2026-11-10.json` | One day of Bank of Canada benchmark yields (from the Valet `bond_yields_benchmark` group) plus the benchmark issues' coupon and maturity (copied from the Bank's "Current benchmark bond yields" page), written by `scripts/make_boc_fixture.py` |
+| `tests/data/boc_benchmark_2026-11-10.json` | One day of Bank of Canada benchmark yields (Valet `bond_yields_benchmark`), that day's benchmark issues (coupon, maturity, looked up in the history below) and the T+1 settle date. Written by `scripts/fetch_boc_fixture.py` |
+| `tests/data/boc_benchmark_history.json` | Every benchmark issue per tenor since 1991 with the date it became the benchmark, parsed from the Bank's "Benchmark Canada Bonds" PDF by `scripts/make_benchmark_history.py` |
+| `tests/test_boc_history.py` | The history is ordered and sane, and the date lookup returns the right issue on and just before each roll |
+| `scripts/fetch_boc_fixture.py` | `python scripts/fetch_boc_fixture.py YYYY-MM-DD`: one day of yields straight from the Valet API, no big download. `make_boc_fixture.py` does the same from a downloaded `bond_yields_benchmark.json` |
 | `tests/test_regression.py` | Golden-file check on the 6 BoC benchmark bonds (`scripts/make_golden.py`) |
 | `src/cdnbond/boc.py` | Loads the BoC fixture as bonds and yields for the tests and the golden-file script |
 
@@ -49,6 +52,22 @@ commands on separate lines.
 bonds. The only values written into tests are calendar facts: the trade dates and expected T+1
 settle dates in `test_settlement.py`. Zero-coupon tests reuse a benchmark's dates and yield with
 the coupon set to zero.
+
+**Using another date.** The suite runs on one fixture, chosen by the `BOC_FIXTURE_DATE`
+environment variable (default 2026-11-10):
+
+```powershell
+python scripts/fetch_boc_fixture.py 2026-10-20      # writes tests/data/boc_benchmark_2026-10-20.json
+$env:BOC_FIXTURE_DATE = "2026-10-20"
+pytest                                              # same tests, that day's bonds and yields
+python scripts/make_golden.py                       # only if you want a golden file for that day
+```
+
+On 2026-10-20 the history picks different 2- and 3-year benchmarks (2.75% Aug 2028 and 4.00% Mar
+2029) than on 2026-11-10, and all tests passed on both dates. The fixture's settle date comes from
+QuantLib's Canada calendar when the fixture is written. The hand-checked settle dates in
+`test_settlement.py` are the independent check on that calendar, and they do not depend on the
+fixture date. `scripts/make_benchmark_history.py` needs `pip install ".[data]"` (pypdf).
 
 ## Conventions (and why they matter)
 
@@ -112,12 +131,16 @@ What the table shows:
 
 ## Next steps
 
-1. **Tighten the benchmark data.** The curve now uses the actual benchmark issues (coupon,
-   maturity) with their real yields. Remaining gaps: the Bank publishes no issue date or ISIN, so
-   issue dates are set to a regular seasoned schedule (price from yield does not depend on it);
-   the coupon/maturity table is copied by hand, not fetched; and benchmarks roll, so re-check it
-   for any other date. Yields for non-benchmark bonds are not available from the Bank (only
-   bucket averages), so a larger curve needs a market data vendor.
+1. **Remaining gaps in the benchmark data.** Benchmark issues now come from the Bank's own
+   history for any date, and yields are fetched, so nothing is hand-copied. What is left: the
+   history is only as current as the PDF (last updated by the Bank 2026-10-23), so a roll after
+   that is invisible and the fetch script warns for any later date, including the default
+   2026-11-10 (the Bank's benchmark page showed the same issues on 2026-11-18, so none were
+   missed); the PDF gives only month and year for maturity, taken as the 1st (true for all six
+   2026 benchmarks); the Bank publishes no issue date or ISIN, so issue dates are set to a regular
+   seasoned schedule (price from yield does not depend on it); and yields for non-benchmark bonds
+   are not available from the Bank (only bucket averages), so a larger curve needs a market data
+   vendor.
 2. **Airflow.** A small DAG that pulls daily yields and checks for stale, missing,
    or outlier values.
 3. **CORRA floating-rate note.**

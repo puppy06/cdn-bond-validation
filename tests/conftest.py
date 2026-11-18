@@ -9,10 +9,14 @@ import pytest
 
 from cdnbond import boc, reference as ref
 
-FIXTURE = Path(__file__).parent / "data" / "boc_benchmark_2026-11-10.json"
+# One fixture drives every test: tests/data/boc_benchmark_<date>.json, with <date> taken from the
+# BOC_FIXTURE_DATE environment variable (default boc.DEFAULT_DATE). Make one with
+# scripts/fetch_boc_fixture.py <date>, then rerun scripts/make_golden.py with the same variable.
+FIXTURE = boc.fixture_path(Path(__file__).parent / "data")
 TRADE, BENCHES = boc.load(FIXTURE)
-# T+1 from TRADE (Tue Nov 10; Nov 11 is a holiday). Checked by hand in test_settlement.py.
-SETTLE = date(2026, 11, 12)
+# T+1 from TRADE, stored in the fixture (written from QuantLib's Canada calendar). The hand-checked
+# settle dates in test_settlement.py are the independent check on that calendar.
+SETTLE = boc.settle_date(FIXTURE)
 
 # Tolerances: tight on purpose. Loosen only with a written reason.
 PRICE_TOL = 1e-9

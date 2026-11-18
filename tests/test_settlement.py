@@ -16,7 +16,8 @@ from conftest import PRICE_TOL, SETTLE, TRADE
 
 # (trade date, expected T+1 settlement, why it is interesting)
 CASES = [
-    (TRADE, SETTLE, "Tue: Nov 11 Remembrance Day is skipped"),
+    (TRADE, SETTLE, "fixture trade date (settle stored in the fixture)"),
+    (date(2026, 11, 10), date(2026, 11, 12), "Tue: Nov 11 Remembrance Day is skipped"),
     (date(2026, 11, 12), date(2026, 11, 13), "Thu -> Fri, plain T+1"),
     (date(2026, 11, 13), date(2026, 11, 16), "Fri -> Mon, weekend skipped"),
     (date(2026, 6, 30), date(2026, 7, 2), "Tue: Jul 1 Canada Day is skipped"),

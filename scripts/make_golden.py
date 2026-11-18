@@ -5,7 +5,6 @@ Regenerate only when a change is intended and reviewed.
 """
 import json
 import sys
-from datetime import date
 from pathlib import Path
 
 import QuantLib as ql
@@ -14,9 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from cdnbond import boc, pricer  # noqa: E402
 
-FIXTURE = ROOT / "tests" / "data" / "boc_benchmark_2026-11-10.json"
+FIXTURE = boc.fixture_path(ROOT / "tests" / "data")  # honours BOC_FIXTURE_DATE, like conftest.py
 OUT = ROOT / "tests" / "golden" / "bonds.json"
-SETTLE = date(2026, 11, 12)  # T+1 from the fixture's trade date (2026-11-10)
+SETTLE = boc.settle_date(FIXTURE)  # T+1 from the fixture's trade date
 
 
 def main() -> None:
