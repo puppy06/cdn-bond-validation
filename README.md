@@ -63,11 +63,19 @@ pytest                                              # same tests, that day's bon
 python scripts/make_golden.py                       # only if you want a golden file for that day
 ```
 
-On 2026-10-20 the history picks different 2- and 3-year benchmarks (2.75% Aug 2028 and 4.00% Mar
-2029) than on 2026-11-10, and all tests passed on both dates. The fixture's settle date comes from
-QuantLib's Canada calendar when the fixture is written. The hand-checked settle dates in
-`test_settlement.py` are the independent check on that calendar, and they do not depend on the
-fixture date. `scripts/make_benchmark_history.py` needs `pip install ".[data]"` (pypdf).
+The history picks the benchmarks for the date: on 2026-10-20 the 2- and 3-year were 2.75% Aug 2028
+and 4.00% Mar 2029, not the 2026-11-10 pair. The full suite passes on fixtures for 2005-06-15,
+2015-06-17, 2023-03-15, 2025-03-12, 2026-10-20, 2026-11-10 and 2026-11-16. The test count varies
+(210 to 230) because `test_settlement.py` prices a bond only on settle dates when it exists and
+has not matured: a 2023 fixture's 2-year bond matured in 2025, before the 2026 calendar cases, so
+it is skipped there. `test_every_case_prices_at_least_one_bond` fails if a calendar case is left
+with no bond. Dates before 2001 have no Valet yields, and dates after 2026-10-23 print a warning
+about the history.
+
+The fixture's settle date comes from QuantLib's Canada calendar when the fixture is written. The
+hand-checked settle dates in `test_settlement.py` are the independent check on that calendar, and
+they do not depend on the fixture date. `scripts/make_benchmark_history.py` needs
+`pip install ".[data]"` (pypdf).
 
 ## Conventions (and why they matter)
 

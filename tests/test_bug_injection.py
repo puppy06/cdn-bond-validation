@@ -127,14 +127,13 @@ def d_t_plus_one():
 # settle date, over the cases in test_settlement.py. Unlike the checks above it goes through
 # settlement_date, so it is the one that sees settlement_days and calendar bugs in a price.
 def d_trade_date_price():
-    from test_settlement import CASES
-    for bench in BENCHES:
+    from test_settlement import PAIRS
+    for bench, (trade, expected, _) in PAIRS:
         b = bench.bond
-        for trade, expected, _ in CASES:
-            qb = pricer.make_bond(b.issue, b.maturity, b.coupon)
-            a = pricer.analytics_from_trade(qb, bench.ytm, trade)
-            if not _close(a.clean, ref.clean_price(b, bench.ytm, expected), abs=PRICE_TOL):
-                return True
+        qb = pricer.make_bond(b.issue, b.maturity, b.coupon)
+        a = pricer.analytics_from_trade(qb, bench.ytm, trade)
+        if not _close(a.clean, ref.clean_price(b, bench.ytm, expected), abs=PRICE_TOL):
+            return True
     return False
 
 
