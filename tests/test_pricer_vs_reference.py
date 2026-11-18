@@ -1,10 +1,10 @@
-"""QuantLib vs the independent reference: every analytic, every bond, every yield."""
+"""QuantLib vs the independent reference: every analytic, every BoC benchmark bond at its real yield."""
 import pytest
 
 ql = pytest.importorskip("QuantLib")
 
 from cdnbond import pricer, reference as ref
-from conftest import PRICE_TOL, RISK_TOL, SETTLE
+from conftest import DV01_BUMP_TOL, PRICE_TOL, RISK_TOL, SETTLE
 
 
 @pytest.fixture
@@ -35,8 +35,8 @@ def test_convexity(bond, ytm, analytics):
 
 
 def test_analytic_dv01_matches_bump(analytics):
-    # The gap is convexity error, O(bp^2): small but not zero.
-    assert analytics.dv01 == pytest.approx(analytics.dv01_bump, rel=1e-6)
+    # The gap is the bump's truncation error, O(bp^2): small but not zero (see DV01_BUMP_TOL).
+    assert analytics.dv01 == pytest.approx(analytics.dv01_bump, rel=DV01_BUMP_TOL)
 
 
 def test_yield_round_trip(bond, ytm, analytics):

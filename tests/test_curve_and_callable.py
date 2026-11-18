@@ -1,24 +1,22 @@
-"""Curve bootstrap and callable-bond no-arbitrage checks."""
+"""Curve bootstrap and callable-bond no-arbitrage checks. Inputs: the BoC benchmark bonds."""
 from datetime import date
 
 import pytest
 
 ql = pytest.importorskip("QuantLib")
 
-from cdnbond import pricer
+from cdnbond import pricer, reference as ref
+from conftest import BENCHES, TRADE
 
-TRADE = date(2026, 11, 10)
+# (issue, maturity, coupon, yield) for the curve bootstrap
+QUOTES = [(b.bond.issue, b.bond.maturity, b.bond.coupon, b.ytm) for b in BENCHES]
 
-# Illustrative benchmark quotes: (issue, maturity, coupon, yield).
-# Replace with Bank of Canada benchmark yields for a real date.
-QUOTES = [
-    (date(2025, 9, 1), date(2027, 9, 1), 0.0250, 0.0245),
-    (date(2025, 6, 1), date(2028, 6, 1), 0.0275, 0.0260),
-    (date(2024, 9, 1), date(2029, 9, 1), 0.0300, 0.0275),
-    (date(2024, 6, 1), date(2031, 6, 1), 0.0300, 0.0295),
-    (date(2025, 6, 1), date(2035, 6, 1), 0.0325, 0.0315),
-    (date(2023, 12, 1), date(2055, 12, 1), 0.0275, 0.0350),
-]
+# The callable bond is the 10-year benchmark, callable at par on dates counted back from maturity.
+TEN_YEAR = next(b.bond for b in BENCHES if b.tenor == "10YR")
+
+
+def _call_dates(years_before_maturity):
+    return [ref.add_months(TEN_YEAR.maturity, -12 * k) for k in years_before_maturity]
 
 
 @pytest.fixture(scope="module")
@@ -44,16 +42,14 @@ def test_discount_factors_are_positive_and_decreasing(curve):
 
 
 def test_callable_not_worth_more_than_straight(curve):
-    calls = [date(2030, 6, 1), date(2031, 6, 1), date(2032, 6, 1)]
     cb, straight = pricer.price_callable(
-        date(2025, 6, 1), date(2035, 6, 1), 0.04, calls, curve)
+        TEN_YEAR.issue, TEN_YEAR.maturity, TEN_YEAR.coupon, _call_dates((5, 4, 3)), curve)
     # The holder is short the call, so callable <= straight (allow tree error).
     assert cb <= straight + 0.05
 
 
 def test_callable_value_falls_as_volatility_rises(curve):
-    calls = [date(2030, 6, 1)]
-    args = (date(2025, 6, 1), date(2035, 6, 1), 0.04, calls, curve)
+    args = (TEN_YEAR.issue, TEN_YEAR.maturity, TEN_YEAR.coupon, _call_dates((5,)), curve)
     low, _ = pricer.price_callable(*args, sigma=0.005)
     high, _ = pricer.price_callable(*args, sigma=0.02)
     assert high < low

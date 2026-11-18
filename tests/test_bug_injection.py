@@ -17,7 +17,8 @@ import pytest
 ql = pytest.importorskip("QuantLib")
 
 from cdnbond import pricer, reference as ref
-from conftest import BONDS, PRICE_TOL, RISK_TOL, SETTLE, YIELDS
+from conftest import (BENCHES, DV01_BUMP_TOL, PRICE_TOL, RISK_TOL, SETTLE, TRADE,
+                      half_years, next_coupon)
 
 GOLDEN = Path(__file__).parent / "golden" / "bonds.json"
 GOLDEN_FIELDS = ("clean", "dirty", "accrued", "mod_duration", "convexity", "dv01")
@@ -38,13 +39,13 @@ BUGS = {
 # ---------------------------------------------------------------- detectors
 # Each returns True when it detects a mismatch (i.e. the bug was caught).
 def _grid(check):
-    """True if `check(bond, ytm, analytics)` is False for any bond/yield pair."""
-    for b in BONDS:
-        for y in YIELDS:
-            qb = pricer.make_bond(b.issue, b.maturity, b.coupon)
-            a = pricer.analytics_from_yield(qb, y, SETTLE)
-            if not check(b, y, a):
-                return True
+    """True if `check(bond, ytm, analytics)` is False for any BoC benchmark bond."""
+    for bench in BENCHES:
+        b, y = bench.bond, bench.ytm
+        qb = pricer.make_bond(b.issue, b.maturity, b.coupon)
+        a = pricer.analytics_from_yield(qb, y, SETTLE)
+        if not check(b, y, a):
+            return True
     return False
 
 
@@ -70,21 +71,21 @@ def d_mod_duration(): return _grid(lambda b, y, a: _close(a.mod_duration, ref.mo
 # sensitivity, so it also notices small discounting differences.
 def d_convexity(): return _grid(lambda b, y, a: _close(a.convexity, ref.convexity(b, y, SETTLE), rel=RISK_TOL))
 # Internal consistency: DV01 from modified duration vs a +/-1bp reprice, both from QuantLib
-# with no reference. Only catches a bug if it breaks that consistency (in the last run:
-# Actual360 and Annual), so it is a weak detector of convention errors.
-def d_dv01_vs_bump(): return _grid(lambda b, y, a: _close(a.dv01, a.dv01_bump, rel=1e-6))
+# with no reference. Only catches a bug if it breaks that consistency. In the last run (1e-5
+# tolerance) it caught none of the eight bugs, so it is a weak detector of convention errors.
+def d_dv01_vs_bump(): return _grid(lambda b, y, a: _close(a.dv01, a.dv01_bump, rel=DV01_BUMP_TOL))
 
 
 # price -> yield -> price round trip. Price and yield share the same broken convention, so
 # the round trip stays self-consistent. Catches none of these bugs; it tests the solver,
 # not the conventions. Kept as a control on the yield solver.
 def d_yield_round_trip():
-    for b in BONDS:
-        for y in YIELDS:
-            qb = pricer.make_bond(b.issue, b.maturity, b.coupon)
-            a = pricer.analytics_from_yield(qb, y, SETTLE)
-            if not _close(pricer.yield_from_clean(qb, a.clean, SETTLE), y, abs=1e-8):
-                return True
+    for bench in BENCHES:
+        b, y = bench.bond, bench.ytm
+        qb = pricer.make_bond(b.issue, b.maturity, b.coupon)
+        a = pricer.analytics_from_yield(qb, y, SETTLE)
+        if not _close(pricer.yield_from_clean(qb, a.clean, SETTLE), y, abs=1e-8):
+            return True
     return False
 
 
@@ -92,27 +93,51 @@ def d_yield_round_trip():
 # accrued. Catches bugs that distort the discounting of a regular period (day count,
 # continuous compounding, payment convention). No reference needed.
 def d_par_bond():
-    qb = pricer.make_bond(date(2022, 12, 1), date(2032, 12, 1), 0.0325)
-    a = pricer.analytics_from_yield(qb, 0.0325, date(2026, 12, 1))
-    return not (_close(a.clean, 100.0, abs=1e-10) and _close(a.accrued, 0.0, abs=1e-12))
+    for bench in BENCHES:
+        b = bench.bond
+        qb = pricer.make_bond(b.issue, b.maturity, b.coupon)
+        a = pricer.analytics_from_yield(qb, b.coupon, next_coupon(b, SETTLE))
+        if not (_close(a.clean, 100.0, abs=1e-10) and _close(a.accrued, 0.0, abs=1e-12)):
+            return True
+    return False
 
 
-# Known answer: a 4-year zero at 4% semi-annual is 100 / 1.02**8. Closed form, no reference.
-# Catches day count, frequency, continuous compounding and payment convention bugs.
+# Known answer: a zero-coupon bond with a benchmark's dates and yield, settled on a coupon
+# date, is worth 100 / (1 + y/2)**n. Closed form, no reference.
 def d_zero_coupon():
-    qb = pricer.make_bond(date(2025, 6, 1), date(2030, 6, 1), 0.0)
-    a = pricer.analytics_from_yield(qb, 0.04, date(2026, 6, 1))
-    return not _close(a.dirty, 100 / 1.02 ** 8, abs=1e-10)
+    for bench in BENCHES:
+        b = bench.bond
+        qb = pricer.make_bond(b.issue, b.maturity, 0.0)
+        settle = next_coupon(b, SETTLE)
+        a = pricer.analytics_from_yield(qb, bench.ytm, settle)
+        if not _close(a.dirty, 100 / (1 + bench.ytm / 2) ** half_years(settle, b.maturity), abs=1e-10):
+            return True
+    return False
 
 
 # Settlement date for a trade on Tue 2026-11-10 must be Thu 2026-11-12 (Nov 11, Remembrance
 # Day, is a Canadian holiday). The only check that sees settlement_days and calendar bugs:
 # T+2 lands on Nov 13, and TARGET lands on Nov 11.
 def d_t_plus_one():
-    return pricer.settlement_date(date(2026, 11, 10)) != ql.Date(12, 11, 2026)
+    return pricer.settlement_date(TRADE) != ql.Date(12, 11, 2026)
 
 
-# Golden file: pricer output for 50 seeded bonds must match tests/golden/bonds.json to 1e-10.
+# Price from a trade date (trade -> T+1 settle -> price) vs the reference at a hand-checked
+# settle date, over the cases in test_settlement.py. Unlike the checks above it goes through
+# settlement_date, so it is the one that sees settlement_days and calendar bugs in a price.
+def d_trade_date_price():
+    from test_settlement import CASES
+    for bench in BENCHES:
+        b = bench.bond
+        for trade, expected, _ in CASES:
+            qb = pricer.make_bond(b.issue, b.maturity, b.coupon)
+            a = pricer.analytics_from_trade(qb, bench.ytm, trade)
+            if not _close(a.clean, ref.clean_price(b, bench.ytm, expected), abs=PRICE_TOL):
+                return True
+    return False
+
+
+# Golden file: pricer output for the 6 BoC benchmark bonds must match tests/golden/bonds.json to 1e-10.
 # A broad net for any convention change that moves a price, duration, convexity or DV01.
 # Blind to settlement bugs because every golden case uses a fixed settle date.
 def d_golden():
@@ -136,6 +161,7 @@ DETECTORS = {
     "par_bond": d_par_bond,
     "zero_coupon": d_zero_coupon,
     "t_plus_one": d_t_plus_one,
+    "trade_date_price": d_trade_date_price,
     "golden_file": d_golden,
 }
 

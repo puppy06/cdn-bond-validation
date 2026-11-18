@@ -90,6 +90,17 @@ def analytics_from_yield(bond: ql.Bond, ytm: float, settle: date,
     )
 
 
+def analytics_from_trade(bond: ql.Bond, ytm: float, trade: date,
+                         conv: Conventions | None = None) -> Analytics:
+    """Price from a trade date: settle = trade + settlement_days on the calendar.
+
+    This is the path where settlement_days and calendar actually affect a price.
+    """
+    conv = conv or Conventions()
+    s = settlement_date(trade, conv)
+    return analytics_from_yield(bond, ytm, date(s.year(), s.month(), s.dayOfMonth()), conv)
+
+
 def yield_from_clean(bond: ql.Bond, clean: float, settle: date,
                      conv: Conventions | None = None) -> float:
     conv = conv or Conventions()
